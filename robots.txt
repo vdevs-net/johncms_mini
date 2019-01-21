@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /panel/
+Disallow: /files/forum/attach/
+Allow: /
