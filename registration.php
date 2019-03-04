@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
     }
     if (empty($error)) {
         $preg = $set['mod_reg'] > 1 ? 1 : 0;
-        $stmt = $db->prepare("INSERT INTO `users` SET
+        $db->prepare("INSERT INTO `users` SET
             `name` = ?,
             `name_lat` = ?,
             `password` = ?,
@@ -106,8 +106,7 @@ if (isset($_POST['submit'])) {
             `set_forum` = '',
             `set_mail` = '',
             `smileys` = ''
-        ")
-        $stmt->execute([
+        ")->execute([
             $reg_nick,
             $lat_nick,
             $pass,
